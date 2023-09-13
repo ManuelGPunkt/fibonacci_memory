@@ -9,11 +9,12 @@ int fibonacci(int i) {
 
 int main(void) {
     int *buffer = NULL;
-    int i = 2;
+    unsigned long long int i = 2;
 
     buffer = (int*) malloc(i);
 
     while(i){
         buffer = (int*) realloc(buffer, fibonacci(i+1));
+        i++;
     }
 }
