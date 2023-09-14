@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>
 
-int fibonacci(int i) {
+unsigned long long int fibonacci(int i) {
     if(i<=1)
         return 1;
     return fibonacci(i-1) + fibonacci(i-2);
@@ -9,7 +9,7 @@ int fibonacci(int i) {
 
 int main(void) {
     int *buffer = NULL;
-    unsigned long long int i = 2;
+    int i = 2;
 
     buffer = (int*) malloc(i);
 
@@ -17,4 +17,6 @@ int main(void) {
         buffer = (int*) realloc(buffer, fibonacci(i+1));
         i++;
     }
+
+    free(buffer);
 }
